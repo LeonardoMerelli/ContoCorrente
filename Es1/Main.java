@@ -12,6 +12,7 @@ public class Main
 		Scanner in = new Scanner (System.in);
 		String nome;
 		int orainizio,orafine;
+		
 		do 
 		{
 			do
@@ -64,9 +65,9 @@ public class Main
 					System.out.println('\n' +"Arrivederci");
 					controllo = false;
 			}break;
-			
 			}
 		} while(controllo);
+		in.close();
 	}
 
 }

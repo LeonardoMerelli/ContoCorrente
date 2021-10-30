@@ -11,8 +11,4 @@ public class Prenotazione
 	{
 		return nome;
 	}
-	
-	
-	
-
 }

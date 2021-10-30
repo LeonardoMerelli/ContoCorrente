@@ -4,7 +4,6 @@ import java.util.*;
 public class Campo extends Prenotazione
 {
 	static ArrayList <Campo> preList = new ArrayList<>();
-	
 	private String ora; 
 	protected Campo(String nome, int orainizio, int orafine) 
 	{
@@ -17,20 +16,22 @@ public class Campo extends Prenotazione
 	{
 		for (int i = 0;i<preList.size();i++) 
 		{
-			if (preList.get(i).getNome().equals(getNome()))
+			if (preList.get(i).getNome().equals(prenota.getNome()))
 	  		return false;
 		}
-		preList.add(prenota);
-		
+        preList.add(prenota);
 		return true;
 		
 	}
-	public boolean removePrenotazione(String utente) // OK
+	public boolean removePrenotazione(String utente) 
 	{
 		for(int i = 0; i <= preList.size(); i++)
 		{
-			if (preList.get(i).getNome().equals(utente)) preList.remove(i);
-			return true;
+			if (preList.get(i).getNome().equals(utente)) 
+				{
+				preList.remove(i);
+				return true;
+				}
 		}
 		return false;
 	}
@@ -39,14 +40,21 @@ public class Campo extends Prenotazione
 	{
 		return ora;
 	}
+	public void stampaLista() 
+	{
+		for (Campo c: preList)
+		{
+			System.out.println(toString(c));
+		}
+		System.out.println(preList.size());
+		
+	}
 	
-	public void stampaLista()
+	public String toString(Campo p)
 	{
 		
-		for(Campo c:preList)
-		{
-			System.out.println(c.getNome()+" "+c.getOra());
-		}
+		return p.getNome()+" "+p.getOra();
+	
 		
 		
 		/*Campo [] listaOra = new Campo[preList.size()];
